@@ -1,0 +1,10 @@
+{
+  "formatVersion": "1.0",
+  "alg": "ed25519",
+  "keyId": "local-development-placeholder",
+  "packageId": "com.openplc.stm32-wp",
+  "version": "0.1.0",
+  "signedAt": "2026-07-19T00:00:00.000Z",
+  "files": {},
+  "signature": "LOCAL_DEVELOPMENT_PLACEHOLDER"
+}

@@ -1,0 +1,300 @@
+{
+    "formatVersion":  "1.0",
+    "package":  {
+                    "id":  "com.openplc.stm32-wp",
+                    "name":  "STM32 WP boards",
+                    "version":  "0.1.0",
+                    "vendor":  {
+                                   "name":  "OpenPLC WP",
+                                   "url":  "https://openplcproject.com",
+                                   "logo":  "assets/logo.png"
+                               },
+                    "description":  "OpenPLC HAL support for custom STM32 WP board profiles, including STM32G071RB and NUCLEO-H563ZI variants.",
+                    "license":  "GPL-3.0",
+                    "minEditorVersion":  "4.1.4",
+                    "inDevelopment":  true
+                },
+    "devices":  [
+                    {
+                        "id":  "stm32g071rb-wp",
+                        "name":  "STM32G071RB WP",
+                        "category":  "Custom STM32 Board",
+                        "preview":  "assets/boards/stm32g071rb-wp.png",
+                        "target":  {
+                                       "type":  "arduino-cli",
+                                       "core":  "STMicroelectronics:stm32",
+                                       "platform":  "STMicroelectronics:stm32:Nucleo_64:pnum=NUCLEO_G071RB",
+                                       "boardManagerUrl":  "https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectronics_index.json"
+                                   },
+                        "specs":  {
+                                      "CPU":  "STM32G071RB ARM Cortex-M0+ at 64MHz",
+                                      "RAM":  "36 KB",
+                                      "Flash":  "128 KB",
+                                      "Analog Inputs":  "PA0, PA1, PA4, PA6, PA7",
+                                      "Digital Inputs":  "PB8, PB2, PB3, PB4, PB5, PB9, PB10",
+                                      "Digital Outputs":  "PB12, PB13, PB14, PB15, PC13, PC14, PC15",
+                                      "USART2 Debug":  "PA2 TX, PA3 RX via ST-LINK",
+                                      "USART1 Modbus RTU":  "PC4 TX, PC5 RX",
+                                      "I2C1":  "SDA PA10, SCL PA9",
+                                      "SPI1":  "MOSI PA12, MISO PA11, SCK PD8, CS PD9",
+                                      "WiFi":  "No",
+                                      "Bluetooth":  "No",
+                                      "Ethernet":  "No"
+                                  },
+                        "hal":  {
+                                    "type":  "arduino-hal",
+                                    "source":  "hal/arduino/stm32_g071rb_wp.cpp",
+                                    "compilerFlags":  {
+                                                          "c_flags":  [
+                                                                          "-MMD",
+                                                                          "-c",
+                                                                          "-Wno-incompatible-pointer-types"
+                                                                      ],
+                                                          "cxx_flags":  [
+                                                                            "-fexceptions"
+                                                                        ]
+                                                      },
+                                    "define":  [
+                                                   "WP_STM32G071RB",
+                                                   "WP_DEBUG_USART Serial",
+                                                   "WP_MODBUS_RTU_USART Serial1",
+                                                   "WP_I2C_SDA PA10",
+                                                   "WP_I2C_SCL PA9",
+                                                   "WP_SPI_MOSI PA12",
+                                                   "WP_SPI_MISO PA11",
+                                                   "WP_SPI_SCK PD8",
+                                                   "WP_SPI_CS PD9"
+                                               ]
+                                },
+                        "defaults":  {
+                                         "pins":  {
+                                                      "defaultDin":  [
+                                                                         "PB8",
+                                                                         "PB2",
+                                                                         "PB3",
+                                                                         "PB4",
+                                                                         "PB5",
+                                                                         "PB9",
+                                                                         "PB10"
+                                                                     ],
+                                                      "defaultDout":  [
+                                                                          "PB12",
+                                                                          "PB13",
+                                                                          "PB14",
+                                                                          "PB15",
+                                                                          "PC13",
+                                                                          "PC14",
+                                                                          "PC15"
+                                                                      ],
+                                                      "defaultAin":  [
+                                                                         "PA0",
+                                                                         "PA1",
+                                                                         "PA4",
+                                                                         "PA6",
+                                                                         "PA7"
+                                                                     ],
+                                                      "defaultAout":  [
+
+                                                                      ]
+                                                  }
+                                     },
+                        "screens":  {
+                                        "Modbus":  "screens/modbus.json"
+                                    },
+                        "debug":  {
+                                      "channels":  [
+                                                       {
+                                                           "label":  "Modbus RTU on USART1",
+                                                           "channel":  "rtu",
+                                                           "enabledWhen":  {
+                                                                               "$ref":  "screens.modbus_rtu.enabled"
+                                                                           },
+                                                           "params":  {
+                                                                          "port":  {
+                                                                                       "$ref":  "configuration.communicationPort",
+                                                                                       "required":  "No serial port selected. Select the USB/serial adapter connected to USART1 Modbus RTU."
+                                                                                   },
+                                                                          "baudRate":  {
+                                                                                           "$ref":  "screens.modbus_rtu.rtu_baud_rate",
+                                                                                           "default":  "115200",
+                                                                                           "as":  "number"
+                                                                                       },
+                                                                          "slaveId":  {
+                                                                                          "$ref":  "screens.modbus_rtu.rtu_slave_id",
+                                                                                          "default":  1,
+                                                                                          "as":  "number"
+                                                                                      }
+                                                                      }
+                                                       }
+                                                   ],
+                                      "messages":  {
+                                                       "noneEnabled":  {
+                                                                           "title":  "Modbus RTU Required",
+                                                                           "body":  "Enable Modbus RTU in the Modbus screen to debug this board over USART1."
+                                                                       }
+                                                   }
+                                  }
+                    },
+                    {
+                        "id":  "nucleo-h563zi-wp",
+                        "name":  "NUCLEO-H563ZI WP",
+                        "category":  "Custom STM32 Board",
+                        "preview":  "assets/logo.png",
+                        "target":  {
+                                       "type":  "arduino-cli",
+                                       "core":  "STMicroelectronics:stm32",
+                                       "platform":  "STMicroelectronics:stm32:Nucleo_144:pnum=NUCLEO_H563ZI,upload_method=swdMethod",
+                                       "boardManagerUrl":  "https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectronics_index.json"
+                                   },
+                        "specs":  {
+                                      "CPU":  "STM32H563ZI ARM Cortex-M33 at up to 250MHz",
+                                      "RAM":  "640 KB",
+                                      "Flash":  "2 MB",
+                                      "Analog Inputs":  "PF11, PF12, PF13, PF14, PC2, PC3 as single-ended ADC channels",
+                                      "Digital Inputs":  "PF0, PF1, PF2, PE2, PE3, PE4, PE5, PE6, PC13",
+                                      "Digital Outputs":  "PE8, PE9, PE10, PE11, PE12, PE13, PE14, PE15, PB10, PF4, PG4",
+                                      "USART3 Debug":  "PD8 TX, PD9 RX via ST-LINK VCP",
+                                      "USART2 RS485":  "PD5 TX, PD6 RX, PD4 DE/RE",
+                                      "LCD SSD2119 SPI1":  "SCK PA5, MOSI PB5, MISO PG9 unused, CS PD14, DC PD15, RST PF3",
+                                      "I2C1 FRAM":  "SCL PB8, SDA PB9",
+                                      "AD7792 SPI2":  "SCK PA12, MOSI PB15, MISO PB14, CS PA11/PB12/PA3/PB4",
+                                      "WiFi":  "No",
+                                      "Bluetooth":  "No",
+                                      "Ethernet":  "Available on MCU/core, not configured by this package",
+                                      "Test LEDs":  "PF4 LED2/yellow, PG4 LED3/red",
+                                      "Test Switch":  "PC13 input for switch testing",
+                                      "LCD Integration":  "Enabled through OPENPLC_LCD_ENABLED and package local library OpenPLC_SSD2119"
+                                  },
+                        "hal":  {
+                                    "type":  "arduino-hal",
+                                    "source":  "hal/arduino/stm32_h563zi_wp.cpp",
+                                    "compilerFlags":  {
+                                                          "c_flags":  [
+                                                                          "-MMD",
+                                                                          "-c",
+                                                                          "-Wno-incompatible-pointer-types"
+                                                                      ],
+                                                          "cxx_flags":  [
+                                                                            "-fexceptions"
+                                                                        ]
+                                                      },
+                                    "define":  [
+                                                   "WP_STM32H563ZI",
+                                                   "ENABLE_HWSERIAL2",
+                                                   "PIN_SERIAL2_RX PD6",
+                                                   "PIN_SERIAL2_TX PD5",
+                                                   "WP_DEBUG_USART Serial",
+                                                   "WP_RS485_USART Serial2",
+                                                   "WP_RS485_TX PD5",
+                                                   "WP_RS485_RX PD6",
+                                                   "WP_RS485_DE PD4",
+                                                   "WP_LCD_SPI_MOSI PB5",
+                                                   "WP_LCD_SPI_MISO PG9",
+                                                   "WP_LCD_SPI_SCK PA5",
+                                                   "WP_LCD_CS PD14",
+                                                   "WP_LCD_DC PD15",
+                                                   "WP_LCD_RST PF3",
+                                                   "WP_I2C_SCL PB8",
+                                                   "WP_I2C_SDA PB9",
+                                                   "WP_AD7792_SPI_MOSI PB15",
+                                                   "WP_AD7792_SPI_MISO PB14",
+                                                   "WP_AD7792_SPI_SCK PA12",
+                                                   "WP_AD7792_CS0 PA11",
+                                                   "WP_AD7792_CS1 PB12",
+                                                   "WP_AD7792_CS2 PA3",
+                                                   "WP_AD7792_CS3 PB4",
+                                                   "WP_LED_YELLOW PF4",
+                                                   "WP_LED_RED PG4",
+                                                   "WP_SWITCH_TEST PC13",
+                                                   "OPENPLC_LCD_ENABLED",
+                                                   "OPENPLC_LCD_FRAMEBUFFER_ENABLED 1",
+                                                   "OPENPLC_LCD_TASK_BUDGET_US 1000UL",
+                                                   "OPENPLC_LCD_ROWS_PER_TASK 2U",
+                                                   "OPENPLC_LCD_CS PD14",
+                                                   "OPENPLC_LCD_DC PD15",
+                                                   "OPENPLC_LCD_RST PF3",
+                                                   "OPENPLC_LCD_REFRESH_MS 100UL"
+                                               ],
+                                    "libraries":  "hal/arduino/libraries",
+                                    "extraArduinoLibraries":  [
+                                                                  "Adafruit GFX Library"
+                                                              ]
+                                },
+                        "defaults":  {
+                                         "pins":  {
+                                                      "defaultDin":  [
+                                                                         "PF0",
+                                                                         "PF1",
+                                                                         "PF2",
+                                                                         "PE2",
+                                                                         "PE3",
+                                                                         "PE4",
+                                                                         "PE5",
+                                                                         "PE6",
+                                                                         "PC13"
+                                                                     ],
+                                                      "defaultDout":  [
+                                                                          "PE8",
+                                                                          "PE9",
+                                                                          "PE10",
+                                                                          "PE11",
+                                                                          "PE12",
+                                                                          "PE13",
+                                                                          "PE14",
+                                                                          "PE15",
+                                                                          "PB10",
+                                                                          "PF4",
+                                                                          "PG4"
+                                                                      ],
+                                                      "defaultAin":  [
+                                                                         "PF11",
+                                                                         "PF12",
+                                                                         "PF13",
+                                                                         "PF14",
+                                                                         "PC2",
+                                                                         "PC3"
+                                                                     ],
+                                                      "defaultAout":  [
+
+                                                                      ]
+                                                  }
+                                     },
+                        "screens":  {
+                                        "Modbus":  "screens/modbus-h563zi.json"
+                                    },
+                        "debug":  {
+                                      "channels":  [
+                                                       {
+                                                           "label":  "Modbus RTU on USART3 ST-LINK VCP",
+                                                           "channel":  "rtu",
+                                                           "enabledWhen":  {
+                                                                               "$ref":  "screens.modbus_rtu.enabled"
+                                                                           },
+                                                           "params":  {
+                                                                          "port":  {
+                                                                                       "$ref":  "configuration.communicationPort",
+                                                                                       "required":  "No serial port selected. Select the ST-LINK VCP COM port connected to USART3."
+                                                                                   },
+                                                                          "baudRate":  {
+                                                                                           "$ref":  "screens.modbus_rtu.rtu_baud_rate",
+                                                                                           "default":  "115200",
+                                                                                           "as":  "number"
+                                                                                       },
+                                                                          "slaveId":  {
+                                                                                          "$ref":  "screens.modbus_rtu.rtu_slave_id",
+                                                                                          "default":  1,
+                                                                                          "as":  "number"
+                                                                                      }
+                                                                      }
+                                                       }
+                                                   ],
+                                      "messages":  {
+                                                       "noneEnabled":  {
+                                                                           "title":  "Modbus RTU Required",
+                                                                           "body":  "Enable Modbus RTU and select Serial for USART3/ST-LINK VCP debugging. USART2/RS485 is reserved for a separate field-device channel."
+                                                                       }
+                                                   }
+                                  }
+                    }
+                ]
+}

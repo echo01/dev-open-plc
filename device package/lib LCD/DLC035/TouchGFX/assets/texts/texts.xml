@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.26.1">
+  <Languages>
+    <Language Id="GB" />
+  </Languages>
+  <Texts>
+    <TextGroup Id="Group1" />
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_E6OS" Alignment="Left" TypographyId="Typography1">
+        <Translation Language="GB">C</Translation>
+      </Text>
+      <Text Id="__SingleUse_FKPF" Alignment="Left" TypographyId="TypePV">
+        <Translation Language="GB">20000000.000</Translation>
+      </Text>
+      <Text Id="__SingleUse_7SIW" Alignment="Left" TypographyId="Typography2">
+        <Translation Language="GB">PV</Translation>
+      </Text>
+      <Text Id="__SingleUse_WK4I" Alignment="Left" TypographyId="Typography2">
+        <Translation Language="GB">SV</Translation>
+      </Text>
+      <Text Id="__SingleUse_H2QW" Alignment="Left" TypographyId="TypePV">
+        <Translation Language="GB">200.0</Translation>
+      </Text>
+      <Text Id="__SingleUse_1RU5" Alignment="Left" TypographyId="Typography1">
+        <Translation Language="GB">200.0</Translation>
+      </Text>
+      <Text Id="__SingleUse_8QI5" Alignment="Left" TypographyId="Typography2">
+        <Translation Language="GB">PV</Translation>
+      </Text>
+      <Text Id="__SingleUse_M5VG" Alignment="Left" TypographyId="Typography2">
+        <Translation Language="GB">SV</Translation>
+      </Text>
+      <Text Id="__SingleUse_789E" Alignment="Left" TypographyId="TypePV">
+        <Translation Language="GB">200.0</Translation>
+      </Text>
+      <Text Id="__SingleUse_G9XY" Alignment="Left" TypographyId="Typography1">
+        <Translation Language="GB">200.0</Translation>
+      </Text>
+      <Text Id="__SingleUse_HS8A" Alignment="Left" TypographyId="Typography2">
+        <Translation Language="GB">PV</Translation>
+      </Text>
+      <Text Id="__SingleUse_UQDA" Alignment="Left" TypographyId="Typography2">
+        <Translation Language="GB">SV</Translation>
+      </Text>
+      <Text Id="__SingleUse_BWQE" Alignment="Left" TypographyId="TypePV">
+        <Translation Language="GB">200.0</Translation>
+      </Text>
+      <Text Id="__SingleUse_V0UI" Alignment="Left" TypographyId="Typography1">
+        <Translation Language="GB">200.0</Translation>
+      </Text>
+      <Text Id="__SingleUse_0QI2" Alignment="Left" TypographyId="Typography2">
+        <Translation Language="GB">SV</Translation>
+      </Text>
+      <Text Id="__SingleUse_GGXO" Alignment="Left" TypographyId="Typography2">
+        <Translation Language="GB">PV</Translation>
+      </Text>
+      <Text Id="__SingleUse_A9LV" Alignment="Left" TypographyId="Typography1">
+        <Translation Language="GB">200.0</Translation>
+      </Text>
+      <Text Id="__SingleUse_ILT2" Alignment="Left" TypographyId="TypePV">
+        <Translation Language="GB">250.1</Translation>
+      </Text>
+      <Text Id="__SingleUse_B1A2" Alignment="Left" TypographyId="Typography3">
+        <Translation Language="GB">Units</Translation>
+      </Text>
+      <Text Id="__SingleUse_AIHS" Alignment="Left" TypographyId="Typography1">
+        <Translation Language="GB">C</Translation>
+      </Text>
+      <Text Id="__SingleUse_7CCG" Alignment="Left" TypographyId="Typography1">
+        <Translation Language="GB">C</Translation>
+      </Text>
+      <Text Id="__SingleUse_HJW8" Alignment="Left" TypographyId="Typography1">
+        <Translation Language="GB">C</Translation>
+      </Text>
+      <Text Id="__SingleUse_UL79" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">ZONE4</Translation>
+      </Text>
+      <Text Id="__SingleUse_DH6E" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">COUNT</Translation>
+      </Text>
+      <Text Id="__SingleUse_1MA6" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">ZONE3</Translation>
+      </Text>
+      <Text Id="__SingleUse_X8Q0" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">ZONE2</Translation>
+      </Text>
+      <Text Id="__SingleUse_XV4I" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">ZONE1</Translation>
+      </Text>
+    </TextGroup>
+  </Texts>
+  <Typographies>
+    <Typography Id="Default" Font="verdanab.ttf" Size="10" Bpp="4" IsVector="yes" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="yes" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="yes" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="TypePV" Font="arialbd.ttf" Size="34" Bpp="4" IsVector="yes" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography1" Font="arialbd.ttf" Size="28" Bpp="4" IsVector="yes" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography2" Font="arialbd.ttf" Size="17" Bpp="4" IsVector="yes" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography3" Font="arialbd.ttf" Size="12" Bpp="4" IsVector="yes" Direction="LTR" FallbackCharacter="?" />
+  </Typographies>
+</TextDatabase>

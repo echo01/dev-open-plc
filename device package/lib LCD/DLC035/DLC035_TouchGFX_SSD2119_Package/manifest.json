@@ -1,0 +1,51 @@
+{
+    "name":  "DLC035_SSD2119_NUCLEO_H563ZI_TouchGFX",
+    "version":  "0.2.7",
+    "date":  "2026-09-24",
+    "target_board":  "NUCLEO-H563ZI",
+    "mcu":  "STM32H563ZITx",
+    "display":  "DLC0350QEM06DT-1",
+    "display_controller":  "SSD2119",
+    "resolution":  {
+                       "width":  320,
+                       "height":  240,
+                       "pixel_format":  "RGB565"
+                   },
+    "interface":  {
+                      "type":  "SPI",
+                      "instance":  "SPI1",
+                      "baudrate":  "8.0 Mbits/s (CubeMX configuration)",
+                      "prescaler":  4,
+                      "data_size":  8,
+                      "master_keep_io_state":  "ENABLE / SPI_CFG2_AFCNTR"
+                  },
+    "pins":  {
+                 "SPI1_SCK":  "PB3",
+                 "SPI1_MOSI":  "PB5",
+                 "SPI1_MISO":  "PB4",
+                 "LCD_RST":  "PB7",
+                 "LCD_DC":  "PG15",
+                 "LCD_CS":  "PB6"
+             },
+    "touchgfx":  {
+                     "version":  "4.26.1",
+                     "interface":  "Custom",
+                     "framebuffer_strategy":  "Partial Buffer - GRAM display",
+                     "blocks":  3,
+                     "block_size_bytes":  2048,
+                     "rtos":  "CMSIS_RTOS_V2",
+                     "te_interrupt":  false
+                 },
+    "status":  {
+                   "cubeide_debug_build":  "pass",
+                   "warnings":  0,
+                   "errors":  0,
+                   "hardware_flash_test":  "Source fix confirmed by user; packaged template not flashed by agent",
+                   "spi_dma":  "pending",
+                   "lcd_touchgfx_display":  "pass",
+                   "asset_layout_rotation":  "fixed_0"
+               },
+    "ssd2119_output_control":  "0x72EF",
+    "asset_converters":  "imageconvert/build and fontconvert/build restored; scoped output exclusions",
+    "startup_color_test_hold_ms":  0
+}

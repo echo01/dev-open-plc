@@ -1,0 +1,60 @@
+{
+    "Meta":  {
+                 "Url":  "http://packages.touchgfx.com/V2/DLC035_SSD2119_NUCLEO_H563ZI/DLC035_SSD2119_NUCLEO_H563ZI-0.2.7.zip",
+                 "MD5sum":  "374D8A263D98DEDB40ED5DDF33B11763",
+                 "Size":  33583901,
+                 "Author":  [
+                                {
+                                    "Name":  "DLC035 SSD2119 TouchGFX Port",
+                                    "Contact":  "",
+                                    "URL":  ""
+                                }
+                            ],
+                 "LicenseUrl":  "",
+                 "Copyright":  "",
+                 "TouchGFXVersion":  {
+                                         "Major":  4,
+                                         "Minor":  26,
+                                         "Build":  1
+                                     },
+                 "CreatedAt":  "2026-09-24T05:15:22Z",
+                 "PathToDotTouchGFX":  "TouchGFX",
+                 "EmbeddedOs":  "FreeRTOS"
+             },
+    "Data":  {
+                 "Version":  {
+                                 "Major":  0,
+                                 "Minor":  2,
+                                 "Build":  7
+                             },
+                 "Name":  "DLC035_SSD2119_NUCLEO_H563ZI",
+                 "HumanFriendlyName":  "NUCLEO-H563ZI + DLC035 SSD2119 SPI",
+                 "BoardName":  "NUCLEO-H563ZI",
+                 "Type":  "TGAT",
+                 "Vendor":  "Custom",
+                 "Description":  "TouchGFX Board Setup/Application Template for NUCLEO-H563ZI driving DLC0350QEM06DT-1 / SSD2119 over SPI1 (PB3 SCK, PB4 MISO, PB5 MOSI, PG15 DC/RS, PB7 RST, PB6 CS). Hardware verified with TouchGFX Designer 4.26.1, RGB565 320x240, partial framebuffer in internal SRAM, no external RAM, no FMC, no TE interrupt. Display transfer uses blocking SPI for reliable operation.",
+                 "DocumentationLink":  "",
+                 "Category":  "By Partners",
+                 "Images":  [
+
+                            ],
+                 "Tags":  [
+                              "STM32H563ZI",
+                              "SSD2119",
+                              "SPI",
+                              "DLC035",
+                              "TouchGFX",
+                              "Partial Buffer",
+                              "Verified LCD"
+                          ],
+                 "AvailableResolutions":  [
+                                              {
+                                                  "Height":  240,
+                                                  "Width":  320
+                                              }
+                                          ],
+                 "TargetBpp":  [
+                                   16
+                               ]
+             }
+}

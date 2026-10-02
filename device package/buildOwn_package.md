@@ -13,7 +13,7 @@ FQBN: STMicroelectronics:stm32:Nucleo_64:pnum=NUCLEO_G071RB
 
 ## 1. Existing Package Structure
 
-Example package:
+Example package:  
 
 ```text
 com.openplc.stm32-community
